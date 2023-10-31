@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/SSp_Detector-{{ version }}.tar.gz
-  sha256: 81fdde53bbc7446d7a21511e849f063a4df8e3b17c745640faf5d2f986cdbc0d
+  sha256: 85e3f6489dd502fbf40855fd13d2cdb6e718d6343e15b4a11d218d51da55ef7f
 
 build:
   noarch: python
