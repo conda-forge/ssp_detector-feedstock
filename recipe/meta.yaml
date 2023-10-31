@@ -1,5 +1,5 @@
 {% set name = "SSp_Detector" %}
-{% set version = "2023.10.31" %}
+{% set version = "2023.10.31.post1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/SSp_Detector-{{ version }}.tar.gz
-  sha256: 85e3f6489dd502fbf40855fd13d2cdb6e718d6343e15b4a11d218d51da55ef7f
+  sha256: 0714b6671e9ec9c2210ca47dc55d8e2503ea10ccfe5630a4e5c633e099987035
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
