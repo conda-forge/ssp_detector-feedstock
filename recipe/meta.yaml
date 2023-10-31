@@ -1,5 +1,5 @@
 {% set name = "SSp_Detector" %}
-{% set version = "2023.10.28" %}
+{% set version = "2023.10.31" %}
 
 package:
   name: {{ name|lower }}
