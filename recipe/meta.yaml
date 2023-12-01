@@ -20,7 +20,7 @@ requirements:
     - python >=3.9.0
   run:
     - python >=3.9.0
-    - mne >=1.5.1
+    - mne >=1.2.0
     - numpy >=1.24.3
     - outdated
     - pandas >=2.0.0
