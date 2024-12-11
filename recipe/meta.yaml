@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/SSp_Detector-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.lower() }}-{{ version }}.tar.gz
   sha256: 6db5313c43363d2e1a44a42219913c4f0890e30ccadbe0295005da86d1636244
 
 build:
@@ -20,7 +20,7 @@ requirements:
     - python >=3.9.0
   run:
     - python >=3.9.0
-    - mne >=1.2.0
+    - mne >=1.5.1
     - numpy >=1.24.3
     - outdated
     - pandas >=2.0.0
