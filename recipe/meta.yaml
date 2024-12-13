@@ -1,5 +1,5 @@
 {% set name = "ssp_detector" %}
-{% set version = "2024.12.10" %}
+{% set version = "2024.12.13" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6db5313c43363d2e1a44a42219913c4f0890e30ccadbe0295005da86d1636244
+  sha256: d69f82a5c32711b1d2d46c875b64b287e982a242a5aa55ddb8bd3d73c496bb0b
 
 build:
   noarch: python
@@ -20,12 +20,12 @@ requirements:
     - pip
     - python {{ python_min }}
   run:
-    - python {{ python_min }}
-    - mne >=1.5.1
-    - numpy >=1.24.3
+    - python >={{ python_min }}
+    - mne >=1.6.0
+    - numpy >=1.25.0
     - outdated
-    - pandas >=2.0.0
-    - scipy >=1.11
+    - pandas >=2.2.0
+    - scipy >=1.12.0
 
 test:
   requires:
