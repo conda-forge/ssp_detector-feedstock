@@ -20,7 +20,7 @@ requirements:
     - pip
     - python {{ python_min }}
   run:
-    - python {{ python_min }}
+    - python >= {{ python_min }}
     - mne >=1.6.0
     - numpy >=1.25.0
     - outdated
