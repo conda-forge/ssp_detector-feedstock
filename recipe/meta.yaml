@@ -1,0 +1,46 @@
+{% set name = "ssp_detector" %}
+{% set version = "2024.12.10" %}
+{% set python_min = "3.10" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 6db5313c43363d2e1a44a42219913c4f0890e30ccadbe0295005da86d1636244
+
+build:
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-build-isolation
+  number: 0
+
+requirements:
+  host:
+    - pip
+    - python {{ python_min }}
+  run:
+    - python {{ python_min }}
+    - mne >=1.5.1
+    - numpy >=1.24.3
+    - outdated
+    - pandas >=2.0.0
+    - scipy >=1.11
+
+test:
+  requires:
+    - python {{ python_min }}
+  imports:
+    - SSp_Detector
+
+about:
+  home: https://github.com/sjg2203/SSp_Detector
+  summary: Sleep spindles detector
+  license: Apache-2.0
+  license_file: LICENSE
+  doc_url: https://github.com/sjg2203/SSp_Detector/blob/main/README.md
+  dev_url: https://github.com/sjg2203/SSp_Detector
+
+extra:
+  recipe-maintainers:
+    - sjg2203
