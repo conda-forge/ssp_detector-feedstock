@@ -1,4 +1,4 @@
-{% set name = "SSp_Detector" %}
+{% set name = "ssp_detector" %}
 {% set version = "2024.12.10" %}
 {% set python_min = "3.10" %}
 
@@ -28,8 +28,9 @@ requirements:
     - scipy >=1.11
 
 test:
-  imports:
+  requires:
     - python {{ python_min }}
+  imports:
     - SSp_Detector
 
 about:
