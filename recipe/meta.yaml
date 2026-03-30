@@ -1,5 +1,5 @@
 {% set name = "ssp_detector" %}
-{% set version = "2026.03.30" %}
+{% set version = "2026.3.30" %}
 {% set python_min = "3.10" %}
 
 package:
