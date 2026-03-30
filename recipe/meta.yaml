@@ -1,5 +1,5 @@
 {% set name = "ssp_detector" %}
-{% set version = "2024.12.13" %}
+{% set version = "2026.03.30" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d69f82a5c32711b1d2d46c875b64b287e982a242a5aa55ddb8bd3d73c496bb0b
+  sha256: 305be37839ca22cc62ecbe983709c8bc26f2dbd003ba2962f9891ae6b8b063b5
 
 build:
   noarch: python
@@ -18,24 +18,32 @@ build:
 requirements:
   host:
     - pip
-    - python {{ python_min }}
+    - python >={{ python_min }}
+    - setuptools
   run:
     - python >={{ python_min }}
     - mne >=1.6.0
     - numpy >=1.25.0
-    - outdated
-    - pandas >=2.2.0
+    - outdated >=0.2.0
     - scipy >=1.12.0
 
 test:
   requires:
-    - python {{ python_min }}
+    - python >={{ python_min }}
   imports:
     - SSp_Detector
+    - SSp_Detector.ssp_detector
+  commands:
+    - python -c "from SSp_Detector import spindles_abs, spindles_rel; print('OK')"
 
 about:
   home: https://github.com/sjg2203/SSp_Detector
-  summary: Sleep spindles detector
+  summary: Sleep spindles detector for EEG signals using absolute or relative Sigma power
+  description: |
+    SSp_Detector analyses raw EEG signals and extrapolates the number of sleep
+    spindles using either the absolute or relative Sigma power (11–16 Hz).
+    It accepts MNE Raw objects and automatically resamples recordings above
+    100 Hz to meet the processing requirement.
   license: Apache-2.0
   license_file: LICENSE
   doc_url: https://github.com/sjg2203/SSp_Detector/blob/main/README.md
